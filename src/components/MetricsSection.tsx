@@ -20,7 +20,7 @@ export function MetricsSection() {
 
   const item = {
     hidden: { opacity: 0, y: 50, scale: 0.8 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", bounce: 0.4 } }
+    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring" as const, bounce: 0.4 } }
   };
 
   return (
