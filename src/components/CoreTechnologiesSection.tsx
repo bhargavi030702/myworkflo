@@ -1,5 +1,54 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { Plus, X } from "lucide-react";
+
+function TechCard({ t, i }: { t: any, i: number }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.5, y: 50 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ type: "spring", bounce: 0.5, delay: i * 0.1 }}
+      onClick={() => setIsOpen(!isOpen)}
+      whileHover={{ y: -5, backgroundColor: "#1c1c1c", borderColor: "rgba(225,29,72,0.4)" }}
+      className="flex flex-col items-start p-8 bg-[#151515] border border-white/5 transition-all duration-300 cursor-pointer group rounded-2xl shadow-lg relative overflow-hidden"
+    >
+      <div className="absolute top-8 right-8 text-slate-500 group-hover:text-rose-500 transition-colors duration-300">
+        {isOpen ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+      </div>
+
+      <motion.span 
+        whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl mb-6"
+      >
+        {t.icon}
+      </motion.span>
+      <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white group-hover:text-rose-500 transition-colors">
+        {t.name}
+      </span>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+            animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <p className="text-xs text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+              {t.desc}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
 
 export function CoreTechnologiesSection() {
   const tools = [
@@ -68,29 +117,7 @@ export function CoreTechnologiesSection() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           {tools.map((t, i) => (
-            <motion.div 
-              key={i} 
-              initial={{ opacity: 0, scale: 0.5, y: 50 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ type: "spring", bounce: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -5, backgroundColor: "#1c1c1c", borderColor: "rgba(225,29,72,0.5)" }}
-              className="flex flex-col items-start p-8 bg-[#151515] border border-white/5 transition-all duration-300 cursor-default group rounded-2xl shadow-lg"
-            >
-              <motion.span 
-                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-                className="text-4xl mb-6"
-              >
-                {t.icon}
-              </motion.span>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-3 group-hover:text-rose-500 transition-colors">
-                {t.name}
-              </span>
-              <p className="text-xs text-slate-500 leading-relaxed group-hover:text-slate-300 transition-colors">
-                {t.desc}
-              </p>
-            </motion.div>
+            <TechCard key={i} t={t} i={i} />
           ))}
         </div>
       </div>
