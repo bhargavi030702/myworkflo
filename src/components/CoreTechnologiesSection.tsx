@@ -3,14 +3,46 @@ import { motion } from "framer-motion";
 
 export function CoreTechnologiesSection() {
   const tools = [
-    { name: "Playwright", icon: "🎭" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Apps Script", icon: "📝" },
-    { name: "Google Sheets", icon: "📊" },
-    { name: "Python", icon: "🐍" },
-    { name: "JavaScript", icon: "⚡" },
-    { name: "GitHub", icon: "🔧" },
-    { name: "Claude AI", icon: "🤖" },
+    { 
+      name: "Playwright", 
+      icon: "🎭",
+      desc: "Automated legacy web portal navigation, iframe handling, and data extraction."
+    },
+    { 
+      name: "Node.js", 
+      icon: "🟢",
+      desc: "Powered the headless backend RPA scripts and automated daily pipelines."
+    },
+    { 
+      name: "Apps Script", 
+      icon: "📝",
+      desc: "Built the 800+ line backend processing engine for real-time, 2-way data sync."
+    },
+    { 
+      name: "Google Sheets", 
+      icon: "📊",
+      desc: "Engineered not just as a database, but as a fully interactive financial canvas UI."
+    },
+    { 
+      name: "Python", 
+      icon: "🐍",
+      desc: "Handled aggressive data parsing and auxiliary backend automation scripts."
+    },
+    { 
+      name: "JavaScript", 
+      icon: "⚡",
+      desc: "Core logic for custom date parsers, array manipulations, and API integrations."
+    },
+    { 
+      name: "GitHub", 
+      icon: "🔧",
+      desc: "Version control management and automated Netlify deployment pipelines."
+    },
+    { 
+      name: "Claude AI", 
+      icon: "🤖",
+      desc: "AI-assisted pair programming, algorithmic generation, and code optimization."
+    },
   ];
 
   return (
@@ -34,25 +66,30 @@ export function CoreTechnologiesSection() {
           Core Technologies
         </motion.h3>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           {tools.map((t, i) => (
             <motion.div 
               key={i} 
-              initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, scale: 0.5, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ type: "spring", bounce: 0.6, delay: i * 0.1 }}
-              whileHover={{ scale: 1.1, backgroundColor: "#7A1F1F", borderColor: "#7A1F1F" }}
-              className="flex flex-col items-center justify-center p-10 bg-[#151515] border border-white/5 transition-colors cursor-pointer group rounded-xl"
+              transition={{ type: "spring", bounce: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -5, backgroundColor: "#1c1c1c", borderColor: "rgba(225,29,72,0.5)" }}
+              className="flex flex-col items-start p-8 bg-[#151515] border border-white/5 transition-all duration-300 cursor-default group rounded-2xl shadow-lg"
             >
               <motion.span 
-                whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                 transition={{ duration: 0.5 }}
-                className="text-5xl mb-6"
+                className="text-4xl mb-6"
               >
                 {t.icon}
               </motion.span>
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">{t.name}</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-3 group-hover:text-rose-500 transition-colors">
+                {t.name}
+              </span>
+              <p className="text-xs text-slate-500 leading-relaxed group-hover:text-slate-300 transition-colors">
+                {t.desc}
+              </p>
             </motion.div>
           ))}
         </div>
