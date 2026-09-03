@@ -148,7 +148,7 @@ export function UpcomingSection() {
                         </div>
                         <div className="pt-6">
                           <a 
-                            href="https://www.linkedin.com/in/bhargavibhaladhare" 
+                            href="https://www.linkedin.com/in/bhargavibhaladharee/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 text-white bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 border border-[#0A66C2]/30 px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all hover:scale-105"
