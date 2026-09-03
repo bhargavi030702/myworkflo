@@ -1,5 +1,5 @@
 "use client";
-import { Mail, MessageSquare, Database, User, GraduationCap, Code2, Briefcase } from "lucide-react";
+import { Mail, MessageSquare, Database, User, GraduationCap, Code2, Briefcase, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -145,6 +145,17 @@ export function UpcomingSection() {
                         <div className="flex items-center gap-3 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
                           <User className="w-4 h-4 text-slate-500" />
                           <span>Riya Travel</span>
+                        </div>
+                        <div className="pt-6">
+                          <a 
+                            href="https://www.linkedin.com/in/bhargavibhaladhare" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 text-white bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 border border-[#0A66C2]/30 px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all hover:scale-105"
+                          >
+                            <Linkedin className="w-4 h-4" />
+                            <span>Connect on LinkedIn</span>
+                          </a>
                         </div>
                       </div>
                     </div>
