@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export function MetricsSection() {
   const metrics = [
-    { title: "Hours Saved", value: 120, icon: <Clock className="w-8 h-8 text-white mx-auto mb-4" /> },
-    { title: "Projects", value: 3, icon: <Target className="w-8 h-8 text-white mx-auto mb-4" /> },
-    { title: "Lines Code", value: 2150, suffix: "+", icon: <Code className="w-8 h-8 text-white mx-auto mb-4" /> }
+    { title: "Hours Saved", value: 175, icon: <Clock className="w-8 h-8 text-white mx-auto mb-4" /> },
+    { title: "Projects", value: 4, icon: <Target className="w-8 h-8 text-white mx-auto mb-4" /> },
+    { title: "Lines Code", value: 2800, suffix: "+", icon: <Code className="w-8 h-8 text-white mx-auto mb-4" /> }
   ];
 
   const container = {
