@@ -3,6 +3,7 @@ title: "Robotic Process Automation (RPA)"
 date: "2026-07-13"
 week: "Week 4"
 tags: ["Playwright", "Node.js", "Automation"]
+github: "https://github.com/bhargavi030702/myworkflo"
 ---
 **What I Built**
 With the backend dashboard and Apps Script perfectly handling the data, the last bottleneck was getting the raw data out of the company's legacy web portal. I designed and developed a complete end-to-end Robotic Process Automation (RPA) system using Node.js and Playwright.

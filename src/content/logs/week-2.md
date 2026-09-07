@@ -3,6 +3,7 @@ title: "Backend Engine & Data Aggregation"
 date: "2026-06-29"
 week: "Week 2"
 tags: ["Google Apps Script", "JavaScript", "Backend"]
+github: "https://github.com/bhargavi030702/myworkflo"
 ---
 **What I Built**
 To power the beautiful dashboard I designed in Week 1, I wrote a massive 800+ line Google Apps Script (`updateDirectSummary`) to act as the backend data processing engine.

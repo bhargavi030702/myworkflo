@@ -3,6 +3,7 @@ title: "HR Automation: Resume Parsing Engine"
 date: "2026-07-20"
 week: "Week 5"
 tags: ["Python", "Data Extraction", "NLP", "HR Tech"]
+github: "https://github.com/bhargavi030702/resume-scraper-hr"
 ---
 
 ### Project Scope

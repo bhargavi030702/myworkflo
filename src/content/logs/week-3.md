@@ -3,6 +3,7 @@ title: "Cross-Document ERP Integration"
 date: "2026-07-06"
 week: "Week 3"
 tags: ["Google Sheets API", "Integration", "OAuth"]
+github: "https://github.com/bhargavi030702/myworkflo"
 ---
 **What I Built**
 The dashboard needed external data that didn't live in our primary workspace. I built an integration script (`importMumbaiERPData`) to securely reach across Google Drive and pull remote ERP data into our local system.

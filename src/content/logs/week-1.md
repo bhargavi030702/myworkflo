@@ -3,6 +3,7 @@ title: "Regional Financial Canvas"
 date: "2026-06-22"
 week: "Week 1"
 tags: ["UI Design", "Google Sheets", "Dashboards"]
+github: "https://github.com/bhargavi030702/myworkflo"
 ---
 **What I Built**
 I kicked off my internship by completely redesigning the company's financial tracking system. Management needed a way to process massive datasets—including a massive 9,000+ row Outstanding Report—in real time. I built the Regional Financial Canvas, a highly interactive, adaptive dashboard that acts as a two-way live sheet. This means it doesn't just display static data; it continuously reads from our live raw data feeds and writes synced updates back to the Google Sheets backend, tracking Collections versus Dues across 14 regions and 4 geographical zones.
