@@ -1,66 +1,59 @@
 "use client";
 import { Counter } from "./Counter";
-import { Clock, Code, Target } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function MetricsSection() {
   const metrics = [
-    { title: "Hours Saved", value: 175, icon: <Clock className="w-8 h-8 text-white mx-auto mb-4" /> },
-    { title: "Projects", value: 4, icon: <Target className="w-8 h-8 text-white mx-auto mb-4" /> },
-    { title: "Lines Code", value: 2800, suffix: "+", icon: <Code className="w-8 h-8 text-white mx-auto mb-4" /> }
+    { title: "Hours Saved", value: 175 },
+    { title: "Projects Delivered", value: 4 },
+    { title: "Lines of Code", value: 2800, suffix: "+" },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring" as const, bounce: 0.4 } }
-  };
-
   return (
-    <section className="w-full bg-[#151515] text-white py-32 relative overflow-hidden">
-      {/* Texture background replicating the wavy noise from the reference */}
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
-      
-      <div className="max-w-7xl mx-auto px-8 relative z-10 text-center">
-        <motion.div 
+    <section
+      id="info"
+      className="w-full bg-cream px-6 py-24 text-ink md:px-12 md:py-36"
+    >
+      <div className="mx-auto max-w-[1400px]">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 md:mb-24"
         >
-          <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-slate-400 border border-slate-700 px-8 py-3 inline-block mb-8 rounded-full">Value & ROI</h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-white">Quantifiable Impact</h3>
+          <span className="meta text-ink/45">Value &amp; ROI</span>
+          <h2 className="font-display mt-4 text-5xl italic leading-tight md:text-7xl">
+            Quantifiable Impact
+          </h2>
         </motion.div>
-        
-        <motion.div 
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8"
-        >
+
+        <div className="border-t border-ink/15">
           {metrics.map((m, i) => (
-            <motion.div key={i} variants={item} className="text-center group cursor-default">
-              <motion.div whileHover={{ scale: 1.2, rotate: 10 }} className="inline-block">
-                {m.icon}
-              </motion.div>
-              <div className="text-5xl md:text-6xl font-extrabold mb-4 font-mono group-hover:text-rose-500 transition-colors duration-500">
-                <Counter value={m.value} suffix={m.suffix} />
-              </div>
-              <div className="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold">
+            <motion.div
+              key={m.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.8,
+                delay: i * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="grid grid-cols-12 items-baseline gap-4 border-b border-ink/15 py-8 md:py-12"
+            >
+              <span className="meta col-span-12 text-ink/45 md:col-span-1">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="col-span-6 font-display text-xl md:col-span-5 md:text-3xl">
                 {m.title}
-              </div>
+              </span>
+              <span className="col-span-6 text-right font-display text-5xl leading-none md:col-span-6 md:text-8xl">
+                <Counter value={m.value} suffix={m.suffix} />
+              </span>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

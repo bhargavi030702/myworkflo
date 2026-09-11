@@ -1,201 +1,136 @@
 "use client";
-import { Mail, MessageSquare, Database, User, GraduationCap, Code2, Briefcase } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+
+const projects = [
+  { title: "Email Automation", collaborator: "with Richard", status: "Scoping Phase" },
+  { title: "Automated Feedback", collaborator: "with Makrand sir", status: "Planning" },
+  { title: "ERP Integration", collaborator: "with Phani sir & Deepa mam", status: "Upcoming" },
+];
+
+const skills = [
+  "Playwright", "Node.js", "Apps Script", "Google Sheets API",
+  "Python", "JavaScript", "GitHub", "Next.js",
+  "Data Pipelines", "RPA",
+];
 
 export function UpcomingSection() {
   const [showAbout, setShowAbout] = useState(false);
 
-  const projects = [
-    {
-      title: "Email Automation",
-      collaborator: "with Richard",
-      icon: <Mail className="w-8 h-8 text-white/80" />,
-      status: "Scoping Phase",
-    },
-    {
-      title: "Automated Feedback",
-      collaborator: "with Makrand sir",
-      icon: <MessageSquare className="w-8 h-8 text-white/80" />,
-      status: "Planning",
-    },
-    {
-      title: "ERP Integration",
-      collaborator: "with Phani sir & Deepa mam",
-      icon: <Database className="w-8 h-8 text-white/80" />,
-      status: "Upcoming",
-    }
-  ];
-
-  const skills = [
-    "Playwright", "Node.js", "Apps Script", "Google Sheets API", 
-    "Python", "JavaScript", "GitHub", "Next.js", 
-    "Data Pipelines", "RPA"
-  ];
-
   return (
-    <section className="w-full bg-[#7A1F1F] text-white py-32 text-center overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8 relative">
-        <motion.div 
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="w-16 h-16 rounded-full bg-white/10 mx-auto mb-6 flex items-center justify-center text-2xl border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-        >
-          🚀
-        </motion.div>
-        
-        <motion.h2 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-xs font-bold uppercase tracking-[0.3em] mb-4 text-rose-200"
-        >
-          Roadmap
-        </motion.h2>
-        
-        <motion.h3 
+    <section className="w-full bg-blush px-6 py-24 text-ink md:px-12 md:py-36">
+      <div className="mx-auto max-w-[1400px]">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl font-extrabold mb-20 tracking-tight"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-14 md:mb-20"
         >
-          On the Horizon
-        </motion.h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {projects.map((proj, idx) => (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+          <span className="meta text-ink/50">Roadmap</span>
+          <h2 className="font-display mt-4 text-5xl italic md:text-7xl">
+            On the Horizon
+          </h2>
+        </motion.div>
+
+        <div className="border-t border-ink/20">
+          {projects.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ type: "spring", bounce: 0.5, delay: idx * 0.2 }}
-              key={idx} 
-              className="flex flex-col items-center group cursor-default"
+              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-12 items-baseline gap-4 border-b border-ink/20 py-7 md:py-9"
             >
-              <motion.div 
-                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.2 }}
-                transition={{ duration: 0.5 }}
-                className="mb-4 bg-black/20 p-4 rounded-2xl border border-white/10"
-              >
-                {proj.icon}
-              </motion.div>
-              <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 text-rose-100 rounded-full mb-6 border border-white/10">
-                {proj.status}
+              <span className="meta col-span-12 text-ink/50 md:col-span-3">
+                {p.status}
               </span>
-              <h4 className="text-xl font-bold mb-2 group-hover:text-black transition-colors duration-300">{proj.title}</h4>
-              <p className="text-sm text-rose-200">{proj.collaborator}</p>
+              <span className="col-span-12 font-display text-3xl leading-tight md:col-span-6 md:text-4xl">
+                {p.title}
+              </span>
+              <span className="col-span-12 font-display text-lg italic text-ink/60 md:col-span-3 md:text-right">
+                {p.collaborator}
+              </span>
             </motion.div>
           ))}
         </div>
-        
-        {/* Profile Toggle Button */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="mt-32"
-        >
-          <motion.button 
+
+        {/* Developer profile */}
+        <div className="mt-20 md:mt-28">
+          <button
             onClick={() => setShowAbout(!showAbout)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-10 py-5 uppercase text-xs tracking-[0.2em] font-bold transition-all border flex items-center gap-4 mx-auto ${
-              showAbout 
-                ? 'bg-black text-white border-black shadow-[0_20px_50px_rgba(0,0,0,0.5)]' 
-                : 'bg-[#0F0F0F] text-white border-[#0F0F0F] hover:bg-black hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]'
-            }`}
+            className="font-display text-2xl italic underline decoration-1 underline-offset-8 transition-opacity hover:opacity-60 md:text-3xl"
           >
-            <Briefcase className="w-4 h-4" />
-            {showAbout ? "Close Developer Profile" : "View Developer Profile"}
-          </motion.button>
-        </motion.div>
+            {showAbout ? "Close profile" : "Read the profile"}
+          </button>
 
-        {/* Expandable Sophisticated Profile Card */}
-        <AnimatePresence>
-          {showAbout && (
-            <motion.div
-              initial={{ opacity: 0, height: 0, y: -20 }}
-              animate={{ opacity: 1, height: "auto", y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -20 }}
-              transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
-              className="overflow-hidden mt-8"
-            >
-              <div className="bg-[#0F0F0F] border border-white/10 p-8 md:p-14 text-left rounded-sm shadow-2xl max-w-4xl mx-auto relative group">
-                {/* Subtle background glow */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-rose-900/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
-                  
-                  {/* Left Column: Identity */}
-                  <div className="md:col-span-5 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-8">
-                    <div>
-                      <div className="w-16 h-16 bg-white text-black flex items-center justify-center text-3xl font-serif italic mb-8 shadow-lg">
-                        B.
-                      </div>
-                      <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-2 tracking-widest uppercase">Bhargavi</h3>
-                      <p className="text-rose-500 text-xs font-bold uppercase tracking-[0.2em] mb-8">Automation Engineer Intern</p>
-                      
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                          <GraduationCap className="w-4 h-4 text-slate-500" />
-                          <span>BBA in Business Analytics</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                          <User className="w-4 h-4 text-slate-500" />
-                          <span>Riya Travel</span>
-                        </div>
-                        <div className="pt-6">
-                          <a 
-                            href="https://www.linkedin.com/in/bhargavibhaladharee/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 text-white bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 border border-[#0A66C2]/30 px-4 py-2 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all hover:scale-105"
-                          >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            <span>Connect on LinkedIn</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Philosophy & Skills */}
-                  <div className="md:col-span-7 flex flex-col justify-center">
-                    <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 mb-5">Professional Focus</h4>
-                    <p className="text-slate-300 leading-relaxed text-sm md:text-base mb-10 border-l-2 border-rose-600 pl-5 italic font-serif">
-                      "Bridging the gap between business analytics and full-cycle software engineering. I specialize in building versatile, end-to-end solutions—from architecting self-healing automations and robust data pipelines, to designing intuitive interfaces that solve complex organizational bottlenecks."
+          <AnimatePresence initial={false}>
+            {showAbout && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="mt-12 grid grid-cols-1 gap-12 border-t border-ink/20 pt-12 md:grid-cols-12">
+                  <div className="md:col-span-4">
+                    <p className="font-display text-6xl italic leading-none">B.</p>
+                    <h3 className="font-display mt-8 text-3xl uppercase tracking-[0.14em]">
+                      Bhargavi
+                    </h3>
+                    <p className="meta mt-3 text-ink/55">
+                      Automation Engineer Intern
                     </p>
-                    
-                    <div className="space-y-5">
-                      <div className="flex items-center gap-3 text-white/50 text-[10px] font-bold uppercase tracking-widest border-b border-white/10 pb-3">
-                        <Code2 className="w-4 h-4" />
-                        <span>Technical Arsenal</span>
+
+                    <dl className="mt-10 space-y-3">
+                      <div className="flex justify-between border-b border-ink/15 pb-2">
+                        <dt className="meta text-ink/50">Education</dt>
+                        <dd className="text-xs">BBA, Business Analytics</dd>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {skills.map((skill, i) => (
-                          <motion.span 
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.05 }}
-                            whileHover={{ y: -2, backgroundColor: "rgba(255,255,255,0.1)", borderColor: "rgba(255,255,255,0.2)" }}
-                            className="px-3 py-1.5 bg-[#151515] border border-white/5 rounded text-[10px] font-bold tracking-[0.1em] uppercase text-slate-300 transition-colors cursor-default"
-                          >
-                            {skill}
-                          </motion.span>
-                        ))}
+                      <div className="flex justify-between border-b border-ink/15 pb-2">
+                        <dt className="meta text-ink/50">Company</dt>
+                        <dd className="text-xs">Riya Travel</dd>
                       </div>
-                    </div>
+                    </dl>
+
+                    <a
+                      href="https://www.linkedin.com/in/bhargavibhaladharee/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rule-link mt-8 inline-block font-display text-xl italic"
+                    >
+                      Connect on LinkedIn
+                    </a>
                   </div>
 
+                  <div className="md:col-span-7 md:col-start-6">
+                    <span className="meta text-ink/50">Professional Focus</span>
+                    <p className="font-display mt-5 text-2xl italic leading-snug md:text-3xl">
+                      Bridging the gap between business analytics and full-cycle
+                      software engineering — architecting self-healing
+                      automations and robust data pipelines, and designing
+                      intuitive interfaces that solve complex organisational
+                      bottlenecks.
+                    </p>
+
+                    <span className="meta mt-14 block border-b border-ink/20 pb-3 text-ink/50">
+                      Technical Arsenal
+                    </span>
+                    <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                      {skills.map((s) => (
+                        <span key={s} className="meta text-ink/70">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

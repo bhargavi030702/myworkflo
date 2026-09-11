@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const display = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-display",
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: "Internship Work Tracker",
-  description: "Highly professional, modular Internship Work Tracker & Value Showcase",
+  title: "Bhargavi — Selected Work",
+  description:
+    "Automation engineering internship at Riya Travel — workflows, data pipelines and delivered projects.",
 };
 
 export default function RootLayout({
@@ -16,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#0F0F0F] text-slate-100 antialiased`}>
+      <body
+        className={`${display.variable} ${sans.variable} font-sans bg-cream text-ink antialiased`}
+      >
         {children}
       </body>
     </html>
