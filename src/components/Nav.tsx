@@ -7,11 +7,11 @@ const links = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-olive text-cream">
+    <header className="sticky top-0 z-50 w-full bg-sage">
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-12">
         <a
           href="#top"
-          className="font-display text-base tracking-[0.22em] uppercase transition-opacity hover:opacity-60"
+          className="meta text-brick transition-opacity hover:opacity-60"
         >
           Bhargavi
         </a>
@@ -20,7 +20,7 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="font-display text-base transition-opacity hover:opacity-60"
+              className="meta text-brick transition-opacity hover:opacity-60"
             >
               {l.label}
             </a>

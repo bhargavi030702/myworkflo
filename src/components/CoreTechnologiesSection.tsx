@@ -14,7 +14,7 @@ const tools = [
 
 export function CoreTechnologiesSection() {
   return (
-    <section className="w-full bg-cream-deep px-6 py-24 text-ink md:px-12 md:py-36">
+    <section className="w-full bg-stone px-6 py-24 text-ink md:px-12 md:py-36">
       <div className="mx-auto max-w-[1400px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,8 +23,8 @@ export function CoreTechnologiesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <span className="meta text-ink/45">Tech Stack</span>
-          <h2 className="font-display mt-4 text-4xl italic md:text-6xl">
+          <span className="meta text-brick">Tech Stack</span>
+          <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
             Core Technologies
           </h2>
         </motion.div>
@@ -43,7 +43,9 @@ export function CoreTechnologiesSection() {
               }}
               className="flex items-baseline justify-between gap-8 border-b border-ink/15 py-7"
             >
-              <span className="font-display text-2xl md:text-3xl">{t.name}</span>
+              <span className="display text-2xl uppercase md:text-3xl">
+                {t.name}
+              </span>
               <span className="max-w-[55%] text-right text-xs leading-relaxed text-ink/60">
                 {t.desc}
               </span>

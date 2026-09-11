@@ -1,25 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  /* Editorial palette - warm olive / cream / blush */
-  --cream: #EDEAE3;
-  --cream-deep: #E3DFD6;
-  --olive: #7C7666;
-  --olive-deep: #6B6557;
-  --blush: #E5CFC5;
-  --ink: #1C1A16;
-  --ink-soft: #55504733;
+  /* Sage / brick palette */
+  --sage: #8B9285;
+  --sage-deep: #7B8275;
+  --brick: #C1544C;
+  --cream: #F1EFEA;
+  --stone: #DCDAD4;
+  --ink: #1B1A17;
 
   --background: var(--cream);
   --foreground: var(--ink);
 }
 
 @theme inline {
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-brick: var(--brick);
   --color-cream: var(--cream);
-  --color-cream-deep: var(--cream-deep);
-  --color-olive: var(--olive);
-  --color-olive-deep: var(--olive-deep);
-  --color-blush: var(--blush);
+  --color-stone: var(--stone);
   --color-ink: var(--ink);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -38,11 +37,18 @@ body {
 }
 
 ::selection {
-  background: var(--blush);
-  color: var(--ink);
+  background: var(--brick);
+  color: var(--cream);
 }
 
-/* Editorial underline used on nav + footer links */
+/* Heavy grotesque display type, set tight */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+}
+
 .rule-link {
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -53,9 +59,9 @@ body {
   opacity: 0.55;
 }
 
-/* Small uppercase meta label, used throughout */
 .meta {
   font-size: 0.625rem;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }

@@ -52,8 +52,8 @@ export function CodeHighlightSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <span className="meta text-ink/45">Engineering</span>
-          <h2 className="font-display mt-4 text-4xl italic md:text-6xl">
+          <span className="meta text-brick">Engineering</span>
+          <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
             Code Highlights
           </h2>
         </motion.div>
@@ -72,7 +72,7 @@ export function CodeHighlightSection() {
               }}
             >
               <figcaption className="flex items-baseline justify-between border-b border-ink/15 pb-3">
-                <span className="font-display text-2xl">{s.caption}</span>
+                <span className="display text-2xl uppercase">{s.caption}</span>
                 <span className="meta text-ink/45">{s.file}</span>
               </figcaption>
               <div className="mt-6 overflow-x-auto bg-ink p-6 md:p-8">

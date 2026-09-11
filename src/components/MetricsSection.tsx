@@ -22,8 +22,8 @@ export function MetricsSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 md:mb-24"
         >
-          <span className="meta text-ink/45">Value &amp; ROI</span>
-          <h2 className="font-display mt-4 text-5xl italic leading-tight md:text-7xl">
+          <span className="meta text-brick">Value &amp; ROI</span>
+          <h2 className="display mt-5 text-5xl uppercase md:text-7xl">
             Quantifiable Impact
           </h2>
         </motion.div>
@@ -42,13 +42,13 @@ export function MetricsSection() {
               }}
               className="grid grid-cols-12 items-baseline gap-4 border-b border-ink/15 py-8 md:py-12"
             >
-              <span className="meta col-span-12 text-ink/45 md:col-span-1">
+              <span className="meta col-span-12 text-ink/40 md:col-span-1">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="col-span-6 font-display text-xl md:col-span-5 md:text-3xl">
+              <span className="meta col-span-6 md:col-span-5 md:text-xs">
                 {m.title}
               </span>
-              <span className="col-span-6 text-right font-display text-5xl leading-none md:col-span-6 md:text-8xl">
+              <span className="display col-span-6 text-right text-5xl text-brick md:col-span-6 md:text-8xl">
                 <Counter value={m.value} suffix={m.suffix} />
               </span>
             </motion.div>
