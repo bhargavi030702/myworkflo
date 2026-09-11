@@ -35,7 +35,10 @@ A warm editorial system rather than a dashboard:
   paper and stone for the light sections
 - **Type** — Archivo grotesque, set tight and uppercase for display; Inter for
   body and meta labels
-- **Motion** — slow fades and rises; nothing bounces
+- **Motion** — a load curtain, letter-by-letter masked reveals, scroll-linked
+  parallax, an infinite ticker band and an ink-wipe row hover. Everything
+  honours `prefers-reduced-motion`: the curtain and parallax are skipped
+  entirely and content renders statically
 - **Structure** — rule-separated rows in place of cards, so the work reads as a
   list rather than a grid
 

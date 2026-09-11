@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "./motion/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -28,9 +29,11 @@ export function UpcomingSection() {
           className="mb-14 md:mb-20"
         >
           <span className="meta text-paper/70">Roadmap</span>
-          <h2 className="display mt-5 text-5xl uppercase md:text-7xl">
-            On the Horizon
-          </h2>
+          <Reveal className="mt-5">
+            <h2 className="display text-5xl uppercase md:text-7xl">
+              On the Horizon
+            </h2>
+          </Reveal>
         </motion.div>
 
         <div className="border-t border-paper/30">

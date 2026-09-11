@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "./motion/Reveal";
 import { motion } from "framer-motion";
 
 const snippets = [
@@ -53,9 +54,11 @@ export function CodeHighlightSection() {
           className="mb-14 md:mb-20"
         >
           <span className="meta text-silver">Engineering</span>
-          <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
-            Code Highlights
-          </h2>
+          <Reveal className="mt-5">
+            <h2 className="display text-4xl uppercase md:text-6xl">
+              Code Highlights
+            </h2>
+          </Reveal>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">

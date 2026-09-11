@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "./motion/Reveal";
 import { motion } from "framer-motion";
 
 const tools = [
@@ -24,9 +25,11 @@ export function CoreTechnologiesSection() {
           className="mb-14 md:mb-20"
         >
           <span className="meta text-silver">Tech Stack</span>
-          <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
-            Core Technologies
-          </h2>
+          <Reveal className="mt-5">
+            <h2 className="display text-4xl uppercase md:text-6xl">
+              Core Technologies
+            </h2>
+          </Reveal>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-x-14 border-t border-ink/15 md:grid-cols-2">

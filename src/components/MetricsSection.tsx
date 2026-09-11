@@ -1,5 +1,6 @@
 "use client";
 import { Counter } from "./Counter";
+import { Reveal } from "./motion/Reveal";
 import { motion } from "framer-motion";
 
 export function MetricsSection() {
@@ -24,9 +25,11 @@ export function MetricsSection() {
           className="mb-16 md:mb-24"
         >
           <span className="meta text-silver">Value &amp; ROI</span>
-          <h2 className="display mt-5 text-5xl uppercase md:text-7xl">
-            Quantifiable Impact
-          </h2>
+          <Reveal className="mt-5">
+            <h2 className="display text-5xl uppercase md:text-7xl">
+              Quantifiable Impact
+            </h2>
+          </Reveal>
         </motion.div>
 
         <div className="border-t border-ink/15">

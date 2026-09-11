@@ -1,6 +1,7 @@
 "use client";
 import { LogEntry } from "@/lib/markdown";
 import { useState } from "react";
+import { Reveal } from "./motion/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 
 const prose =
@@ -11,6 +12,7 @@ const prose =
 
 function WorkRow({ log, index }: { log: LogEntry; index: number }) {
   const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState(false);
 
   return (
     <motion.div
@@ -22,16 +24,37 @@ function WorkRow({ log, index }: { log: LogEntry; index: number }) {
     >
       <button
         onClick={() => setOpen(!open)}
-        className="group grid w-full grid-cols-12 items-baseline gap-4 py-7 text-left md:py-9"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        className="group relative isolate grid w-full grid-cols-12 items-baseline gap-4 py-7 text-left md:py-9"
       >
-        <span className="meta col-span-12 text-paper/60 md:col-span-3">
+        {/* Ink wipe: sweeps in from the left, out to the right */}
+        <motion.span
+          aria-hidden
+          initial={false}
+          animate={{ scaleX: hover ? 1 : 0 }}
+          style={{ originX: hover ? 0 : 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-x-[-1.5rem] inset-y-0 -z-10 bg-paper"
+        />
+        <span
+          className={`meta col-span-12 transition-colors duration-300 md:col-span-3 ${
+            hover ? "text-ink/75" : "text-paper/60"
+          }`}
+        >
           {log.week} &nbsp;/&nbsp; {log.date}
         </span>
-        <span className="display col-span-11 text-3xl uppercase text-paper transition-colors group-hover:text-silver md:col-span-8 md:text-5xl">
+        <span
+          className={`display col-span-11 text-3xl uppercase transition-colors duration-300 md:col-span-8 md:text-5xl ${
+            hover ? "text-ink" : "text-paper"
+          }`}
+        >
           {log.title}
         </span>
         <span
-          className="display col-span-1 justify-self-end text-2xl text-silver transition-transform duration-500"
+          className={`display col-span-1 justify-self-end text-2xl transition-all duration-500 ${
+            hover ? "text-ink" : "text-silver"
+          }`}
           style={{ transform: open ? "rotate(45deg)" : "none" }}
           aria-hidden
         >
@@ -99,9 +122,11 @@ export function GallerySection({ logs }: { logs: LogEntry[] }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <h2 className="display text-4xl uppercase text-silver md:text-6xl">
-            Select Works
-          </h2>
+          <Reveal>
+            <h2 className="display text-4xl uppercase text-silver md:text-6xl">
+              Select Works
+            </h2>
+          </Reveal>
           <p className="mt-6 max-w-md text-sm text-paper/70">
             A week-by-week narrative of delivered workflows. Select any line to
             read the full log.

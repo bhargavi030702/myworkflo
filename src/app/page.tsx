@@ -1,5 +1,8 @@
+import { Intro } from "@/components/Intro";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Nav } from "@/components/Nav";
 import { HeroSection } from "@/components/HeroSection";
+import { Marquee } from "@/components/Marquee";
 import { MetricsSection } from "@/components/MetricsSection";
 import { GallerySection } from "@/components/GallerySection";
 import { CodeHighlightSection } from "@/components/CodeHighlightSection";
@@ -13,9 +16,12 @@ export default async function Dashboard() {
 
   return (
     <>
+      <Intro />
+      <ScrollProgress />
       <Nav />
       <main className="min-h-screen w-full overflow-x-hidden bg-paper">
         <HeroSection />
+        <Marquee />
         <MetricsSection />
         <GallerySection logs={logs} />
         <CodeHighlightSection />
