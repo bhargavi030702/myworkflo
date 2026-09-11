@@ -4,7 +4,10 @@ import { useEffect, useRef } from "react";
 
 export function Counter({ value, suffix = "" }: { value: number, suffix?: string }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest) + suffix);
+  const rounded = useTransform(
+    count,
+    (latest) => Math.round(latest).toLocaleString("en-US") + suffix
+  );
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 

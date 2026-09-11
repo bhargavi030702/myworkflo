@@ -12,6 +12,7 @@ export interface LogEntry {
   date: string;
   week: string;
   tags: string[];
+  github?: string;
   contentHtml: string;
 }
 
@@ -45,6 +46,7 @@ export async function getSortedLogsData(): Promise<LogEntry[]> {
           date: matterResult.data.date || '1970-01-01',
           week: matterResult.data.week || '',
           tags: matterResult.data.tags || [],
+          github: matterResult.data.github || undefined,
           contentHtml,
         };
       })

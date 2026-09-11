@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 export function MetricsSection() {
   const metrics = [
-    { title: "Hours Saved", value: 175 },
-    { title: "Projects Delivered", value: 4 },
-    { title: "Lines of Code", value: 2800, suffix: "+" },
+    { title: "Hours Saved", value: 183 },
+    { title: "Projects Delivered", value: 5 },
+    { title: "Lines of Code", value: 2950, suffix: "+" },
+    { title: "Rows Transformed", value: 10000, suffix: "+" },
   ];
 
   return (

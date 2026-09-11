@@ -57,6 +57,16 @@ function WorkRow({ log, index }: { log: LogEntry; index: number }) {
                     </span>
                   ))}
                 </div>
+                {log.github && (
+                  <a
+                    href={log.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rule-link meta mt-6 inline-block text-cream"
+                  >
+                    View repository
+                  </a>
+                )}
               </div>
               <div
                 className={`col-span-12 max-w-2xl text-sm leading-relaxed text-cream/80 md:col-span-8 ${prose}`}
