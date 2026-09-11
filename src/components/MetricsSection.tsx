@@ -13,7 +13,7 @@ export function MetricsSection() {
   return (
     <section
       id="info"
-      className="w-full bg-cream px-6 py-24 text-ink md:px-12 md:py-36"
+      className="w-full bg-paper px-6 py-24 text-ink md:px-12 md:py-36"
     >
       <div className="mx-auto max-w-[1400px]">
         <motion.div
@@ -23,7 +23,7 @@ export function MetricsSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 md:mb-24"
         >
-          <span className="meta text-brick">Value &amp; ROI</span>
+          <span className="meta text-silver">Value &amp; ROI</span>
           <h2 className="display mt-5 text-5xl uppercase md:text-7xl">
             Quantifiable Impact
           </h2>
@@ -49,7 +49,7 @@ export function MetricsSection() {
               <span className="meta col-span-6 md:col-span-5 md:text-xs">
                 {m.title}
               </span>
-              <span className="display col-span-6 text-right text-5xl text-brick md:col-span-6 md:text-8xl">
+              <span className="display col-span-6 text-right text-5xl text-silver md:col-span-6 md:text-8xl">
                 <Counter value={m.value} suffix={m.suffix} />
               </span>
             </motion.div>

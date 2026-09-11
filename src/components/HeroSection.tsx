@@ -5,14 +5,14 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative w-full overflow-hidden bg-sage px-6 pb-20 pt-14 text-cream md:px-12 md:pb-28 md:pt-20"
+      className="relative w-full overflow-hidden bg-ink px-6 pb-20 pt-14 text-paper md:px-12 md:pb-28 md:pt-20"
     >
       <div className="mx-auto max-w-[1400px]">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="meta text-cream/70"
+          className="meta text-paper/70"
         >
           Automation Engineer Intern &nbsp;/&nbsp; Riya Travel
         </motion.p>
@@ -23,7 +23,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="display uppercase text-brick"
+            className="display uppercase text-silver"
             style={{ fontSize: "clamp(3.25rem, 15vw, 14rem)" }}
           >
             <span className="block">Automation</span>
@@ -42,12 +42,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-none absolute bottom-0 right-0 hidden w-[34%] max-w-[420px] translate-y-[18%] bg-sage-deep p-8 lg:block"
+            className="pointer-events-none absolute bottom-0 right-0 hidden w-[34%] max-w-[420px] translate-y-[18%] bg-graphite p-8 lg:block"
           >
-            <span className="meta block text-cream/60">In post since</span>
-            <p className="display mt-3 text-6xl text-cream">June 2026</p>
-            <div className="my-6 h-px w-12 bg-brick" />
-            <p className="meta text-brick">Present</p>
+            <span className="meta block text-paper/60">In post since</span>
+            <p className="display mt-3 text-6xl text-paper">June 2026</p>
+            <div className="my-6 h-px w-12 bg-silver" />
+            <p className="meta text-silver">Present</p>
           </motion.div>
         </div>
 
@@ -55,7 +55,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-14 max-w-xl text-sm leading-relaxed text-cream/80 md:mt-20 md:text-base"
+          className="mt-14 max-w-xl text-sm leading-relaxed text-paper/80 md:mt-20 md:text-base"
         >
           Streamlining workflows and engineering robust financial solutions at
           Riya Travel — self-healing RPA, automated data pipelines, and

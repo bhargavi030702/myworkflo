@@ -43,7 +43,7 @@ try {
 
 export function CodeHighlightSection() {
   return (
-    <section className="w-full bg-cream px-6 py-24 text-ink md:px-12 md:py-36">
+    <section className="w-full bg-paper px-6 py-24 text-ink md:px-12 md:py-36">
       <div className="mx-auto max-w-[1400px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export function CodeHighlightSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <span className="meta text-brick">Engineering</span>
+          <span className="meta text-silver">Engineering</span>
           <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
             Code Highlights
           </h2>
@@ -76,7 +76,7 @@ export function CodeHighlightSection() {
                 <span className="meta text-ink/45">{s.file}</span>
               </figcaption>
               <div className="mt-6 overflow-x-auto bg-ink p-6 md:p-8">
-                <pre className="font-mono text-[12px] leading-relaxed text-cream/85">
+                <pre className="font-mono text-[12px] leading-relaxed text-paper/85">
                   <code>{s.code}</code>
                 </pre>
               </div>

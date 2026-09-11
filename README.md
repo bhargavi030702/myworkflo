@@ -31,8 +31,8 @@ Repository: [excel-statement-combiner](https://github.com/bhargavi030702/excel-s
 
 A warm editorial system rather than a dashboard:
 
-- **Palette** — sage green ground, brick red display type, cream and stone for
-  the light sections
+- **Palette** — monochrome: near-black ground with light grey display type,
+  paper and stone for the light sections
 - **Type** — Archivo grotesque, set tight and uppercase for display; Inter for
   body and meta labels
 - **Motion** — slow fades and rises; nothing bounces

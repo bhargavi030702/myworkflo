@@ -14,7 +14,7 @@ export default async function Dashboard() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen w-full overflow-x-hidden bg-cream">
+      <main className="min-h-screen w-full overflow-x-hidden bg-paper">
         <HeroSection />
         <MetricsSection />
         <GallerySection logs={logs} />

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const prose =
   "[&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>p]:mb-4 [&>p>strong]:text-ink " +
-  "[&>ul>li>strong]:text-ink [&>pre]:bg-ink [&>pre]:text-cream [&>pre]:p-5 " +
+  "[&>ul>li>strong]:text-ink [&>pre]:bg-ink [&>pre]:text-paper [&>pre]:p-5 " +
   "[&>pre]:overflow-x-auto [&>pre]:text-xs [&>pre]:font-mono [&>pre]:my-6 " +
   "[&>p>code]:bg-stone [&>p>code]:px-1.5 [&>p>code]:py-0.5 [&>p>code]:font-mono";
 
@@ -18,20 +18,20 @@ function WorkRow({ log, index }: { log: LogEntry; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      className="border-b border-cream/25"
+      className="border-b border-paper/25"
     >
       <button
         onClick={() => setOpen(!open)}
         className="group grid w-full grid-cols-12 items-baseline gap-4 py-7 text-left md:py-9"
       >
-        <span className="meta col-span-12 text-cream/60 md:col-span-3">
+        <span className="meta col-span-12 text-paper/60 md:col-span-3">
           {log.week} &nbsp;/&nbsp; {log.date}
         </span>
-        <span className="display col-span-11 text-3xl uppercase text-cream transition-colors group-hover:text-brick md:col-span-8 md:text-5xl">
+        <span className="display col-span-11 text-3xl uppercase text-paper transition-colors group-hover:text-silver md:col-span-8 md:text-5xl">
           {log.title}
         </span>
         <span
-          className="display col-span-1 justify-self-end text-2xl text-brick transition-transform duration-500"
+          className="display col-span-1 justify-self-end text-2xl text-silver transition-transform duration-500"
           style={{ transform: open ? "rotate(45deg)" : "none" }}
           aria-hidden
         >
@@ -52,7 +52,7 @@ function WorkRow({ log, index }: { log: LogEntry; index: number }) {
               <div className="col-span-12 md:col-span-3">
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {log.tags.map((tag) => (
-                    <span key={tag} className="meta text-brick">
+                    <span key={tag} className="meta text-silver">
                       {tag}
                     </span>
                   ))}
@@ -62,14 +62,14 @@ function WorkRow({ log, index }: { log: LogEntry; index: number }) {
                     href={log.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rule-link meta mt-6 inline-block text-cream"
+                    className="rule-link meta mt-6 inline-block text-paper"
                   >
                     View repository
                   </a>
                 )}
               </div>
               <div
-                className={`col-span-12 max-w-2xl text-sm leading-relaxed text-cream/80 md:col-span-8 ${prose}`}
+                className={`col-span-12 max-w-2xl text-sm leading-relaxed text-paper/80 md:col-span-8 ${prose}`}
                 dangerouslySetInnerHTML={{ __html: log.contentHtml }}
               />
             </div>
@@ -89,7 +89,7 @@ export function GallerySection({ logs }: { logs: LogEntry[] }) {
   return (
     <section
       id="works"
-      className="w-full bg-sage px-6 py-24 text-cream md:px-12 md:py-36"
+      className="w-full bg-ink px-6 py-24 text-paper md:px-12 md:py-36"
     >
       <div className="mx-auto max-w-[1400px]">
         <motion.div
@@ -99,10 +99,10 @@ export function GallerySection({ logs }: { logs: LogEntry[] }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <h2 className="display text-4xl uppercase text-brick md:text-6xl">
+          <h2 className="display text-4xl uppercase text-silver md:text-6xl">
             Select Works
           </h2>
-          <p className="mt-6 max-w-md text-sm text-cream/70">
+          <p className="mt-6 max-w-md text-sm text-paper/70">
             A week-by-week narrative of delivered workflows. Select any line to
             read the full log.
           </p>
@@ -114,8 +114,8 @@ export function GallerySection({ logs }: { logs: LogEntry[] }) {
                 onClick={() => setFilter(tag)}
                 className={`meta transition-opacity ${
                   filter === tag
-                    ? "text-brick underline underline-offset-4"
-                    : "text-cream/60 hover:opacity-60"
+                    ? "text-silver underline underline-offset-4"
+                    : "text-paper/60 hover:opacity-60"
                 }`}
               >
                 {tag}
@@ -124,7 +124,7 @@ export function GallerySection({ logs }: { logs: LogEntry[] }) {
           </div>
         </motion.div>
 
-        <div className="border-t border-cream/25">
+        <div className="border-t border-paper/25">
           {filteredLogs.map((log, idx) => (
             <WorkRow key={log.id} log={log} index={idx} />
           ))}

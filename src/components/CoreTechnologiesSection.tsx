@@ -23,7 +23,7 @@ export function CoreTechnologiesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 md:mb-20"
         >
-          <span className="meta text-brick">Tech Stack</span>
+          <span className="meta text-silver">Tech Stack</span>
           <h2 className="display mt-5 text-4xl uppercase md:text-6xl">
             Core Technologies
           </h2>
