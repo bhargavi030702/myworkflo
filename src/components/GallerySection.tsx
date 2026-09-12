@@ -4,11 +4,19 @@ import { useState } from "react";
 import { Reveal } from "./motion/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 
+// These run on the DARK section ground, so every colour here must be light.
+// Uses descendant selectors (`&_x`) not child (`&>x`): remark nests <strong>
+// and <code> inside <li> and <pre>, which direct-child rules never reach.
 const prose =
-  "[&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>p]:mb-4 [&>p>strong]:text-ink " +
-  "[&>ul>li>strong]:text-ink [&>pre]:bg-ink [&>pre]:text-paper [&>pre]:p-5 " +
-  "[&>pre]:overflow-x-auto [&>pre]:text-xs [&>pre]:font-mono [&>pre]:my-6 " +
-  "[&>p>code]:bg-stone [&>p>code]:px-1.5 [&>p>code]:py-0.5 [&>p>code]:font-mono";
+  "[&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-4 [&_li]:mb-2 [&_li]:marker:text-silver/50 " +
+  "[&_strong]:text-paper [&_strong]:font-semibold " +
+  "[&_h3]:meta [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-silver " +
+  "[&_pre]:bg-paper/[0.06] [&_pre]:text-paper/90 [&_pre]:p-5 [&_pre]:my-6 " +
+  "[&_pre]:overflow-x-auto [&_pre]:text-xs [&_pre]:font-mono [&_pre]:leading-relaxed " +
+  "[&_code]:bg-paper/10 [&_code]:text-silver [&_code]:px-1.5 [&_code]:py-0.5 " +
+  "[&_code]:rounded-sm [&_code]:font-mono [&_code]:text-[0.92em] " +
+  // a <code> inside a <pre> must not get the inline pill treatment
+  "[&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-inherit";
 
 function WorkRow({ log, index }: { log: LogEntry; index: number }) {
   const [open, setOpen] = useState(false);
