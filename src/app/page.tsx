@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { HeroSection } from "@/components/HeroSection";
 import { Marquee } from "@/components/Marquee";
 import { MetricsSection } from "@/components/MetricsSection";
+import { SystemsSection } from "@/components/SystemsSection";
 import { GallerySection } from "@/components/GallerySection";
 import { CodeHighlightSection } from "@/components/CodeHighlightSection";
 import { UpcomingSection } from "@/components/UpcomingSection";
@@ -23,6 +24,7 @@ export default async function Dashboard() {
         <HeroSection />
         <Marquee />
         <MetricsSection />
+        <SystemsSection />
         <GallerySection logs={logs} />
         <CodeHighlightSection />
         <UpcomingSection />

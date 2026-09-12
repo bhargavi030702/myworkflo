@@ -35,6 +35,9 @@ A warm editorial system rather than a dashboard:
   paper and stone for the light sections
 - **Type** — Archivo grotesque, set tight and uppercase for display; Inter for
   body and meta labels
+- **Robot** — an inline-SVG companion in Systems Running whose pupils track
+  the cursor, which blinks on a randomised timer and waves when clicked,
+  beside a terminal typing out the real delivered numbers
 - **Motion** — a load curtain, letter-by-letter masked reveals, scroll-linked
   parallax, an infinite ticker band and an ink-wipe row hover. Everything
   honours `prefers-reduced-motion`: the curtain and parallax are skipped

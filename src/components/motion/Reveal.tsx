@@ -1,6 +1,6 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { ReactNode, useRef } from "react";
 
 /**
  * Masked reveal: the child slides up from behind a clipping edge.
@@ -16,16 +16,20 @@ export function Reveal({
   className?: string;
 }) {
   const reduced = useReducedMotion();
+  const ref = useRef<HTMLSpanElement>(null);
+  // Observe the MASK, not the content. The content starts translated fully
+  // below the mask's clip box, so an observer on the content itself reports
+  // zero intersection forever and the reveal never fires.
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   if (reduced) return <div className={className}>{children}</div>;
 
   return (
-    <span className={`block overflow-hidden ${className}`}>
+    <span ref={ref} className={`block overflow-hidden ${className}`}>
       <motion.span
         className="block"
         initial={{ y: "110%" }}
-        whileInView={{ y: "0%" }}
-        viewport={{ once: true, margin: "-60px" }}
+        animate={inView ? { y: "0%" } : { y: "110%" }}
         transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
