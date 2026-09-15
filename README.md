@@ -4,7 +4,7 @@ An editorial-style work tracker and developer profile documenting an automation
 engineering internship at Riya Travel: the workflows built, the pipelines
 shipped, and the hours they gave back.
 
-**Live:** [myworkflo.netlify.app](https://myworkflo.netlify.app/)
+**Live:** [myworkflo.vercel.app](https://myworkflo.vercel.app/)
 
 ## Delivered Impact
 
@@ -78,7 +78,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Deployment is continuous — every push to `main` triggers a Netlify rebuild.
+Deployment is continuous — every push to `main` triggers a Vercel rebuild.
 
 ---
 *Bhargavi — BBA in Business Analytics, Automation Engineer Intern*
