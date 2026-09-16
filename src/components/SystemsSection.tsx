@@ -11,7 +11,8 @@ const LINES = [
   "40 sheets consolidated",
   "10,432 rows transformed",
   "report pushed to google sheets",
-  "183 hours returned to the team",
+  "1,185 gst invoices parsed + verified",
+  "225 hours returned to the team",
 ];
 
 /** Types one line at a time, then moves to the next. */

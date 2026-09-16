@@ -10,12 +10,25 @@ shipped, and the hours they gave back.
 
 | Metric | Figure |
 |---|---|
-| Hours saved | 183 |
-| Projects delivered | 5 |
-| Lines of code | 2,950+ |
+| Hours saved | 225 |
+| Projects delivered | 6 |
+| Lines of code | 4,480+ |
 | Rows transformed in one run | 10,000+ |
 
-### Latest — Customer Statement Transformer
+### Latest — Airline GST Invoice Extractor
+
+1,255 airline tax invoices across four airlines, read and reconciled without
+anyone keying a figure by hand.
+
+- **~42 hours of manual keying reduced to 16 seconds**
+- **1,185 invoices read and verified**, every one balancing exactly
+- **Four airline layouts** parsed — Air India, Air India Express, IndiGo, Emirates
+- Scans with no text are set aside for manual entry, never guessed at
+- Shipped as one bundled file and a `.bat` — Node.js only, no install, no network
+
+Repository: [gst-invoice-to-excel](https://github.com/bhargavi030702/gst-invoice-to-excel)
+
+### Previously — Customer Statement Transformer
 
 Dozens of customer statement workbooks, each with its own irregular header
 block, consolidated into a single clean master table.
