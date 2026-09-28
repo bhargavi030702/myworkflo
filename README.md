@@ -11,7 +11,7 @@ shipped, and the hours they gave back.
 | Metric | Figure |
 |---|---|
 | Hours saved | 255 |
-| Projects delivered | 8 |
+| Projects completed | 8 |
 | Lines of code | 9,750+ |
 | Rows transformed in one run | 10,000+ |
 
