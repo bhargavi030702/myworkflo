@@ -12,7 +12,9 @@ const LINES = [
   "10,432 rows transformed",
   "report pushed to google sheets",
   "1,185 gst invoices parsed + verified",
-  "225 hours returned to the team",
+  "316 invoices renamed, 0 wrong",
+  "331 invoice pdfs pulled from the erp",
+  "255 hours returned to the team",
 ];
 
 /** Types one line at a time, then moves to the next. */

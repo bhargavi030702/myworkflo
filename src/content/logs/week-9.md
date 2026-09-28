@@ -65,3 +65,11 @@ requirement: no `npm install`, no `node_modules`, no internet. Drop the PDFs in,
 double-click, and the output folder opens by itself — carrying the workbook, a
 plain-English guide to what is in it, and copies of every scan still needing a
 pair of eyes.
+
+### Since Then
+The extractor has grown from four airlines to **thirteen** — Akasa, Alliance Air,
+British Airways, Malaysia Airlines, Singapore Airlines, SriLankan, and the Air
+France, KLM and Lufthansa passage invoices joined the original four. It now reads
+**HTML invoices saved from e-mail** as well as PDFs. On the latest run, 158 of 160
+documents balanced exactly; the other two were flagged for a person to check
+rather than written out as though they were right.
